@@ -20,6 +20,7 @@
             --primary-light: #818cf8;
             --secondary: #ec4899;
             --accent-green: #10b981;
+            --accent-amber: #f59e0b;
             --accent-cyan: #06b6d4;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
@@ -53,7 +54,6 @@
             padding: 0 24px;
         }
 
-        /* Header */
         header {
             padding: 40px 0 24px;
             border-bottom: 1px solid var(--border-card);
@@ -144,6 +144,12 @@
             background: rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
+        }
+
+        .btn-private {
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: #fbbf24;
         }
 
         /* Controls Section */
@@ -243,7 +249,7 @@
         /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
             gap: 24px;
         }
 
@@ -295,6 +301,12 @@
             letter-spacing: 0.05em;
         }
 
+        .badge-private {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
         .badge-live {
             background: rgba(16, 185, 129, 0.15);
             color: #34d399;
@@ -343,7 +355,7 @@
 
         .card-btn {
             flex: 1;
-            min-width: 120px;
+            min-width: 110px;
             justify-content: center;
             font-size: 0.84rem;
             padding: 9px 12px;
@@ -364,12 +376,6 @@
             align-items: center;
             gap: 10px;
             z-index: 1000;
-            animation: fadeIn 0.3s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 768px) {
@@ -392,7 +398,7 @@
                 <div class="brand-avatar">HM</div>
                 <div class="brand-text">
                     <h1>Harshit Meena — Projects & Applications Hub</h1>
-                    <p>सारे प्रोजेक्ट्स एक ही स्थान पर | Live Launchers, GitHub Repositories & Workspaces</p>
+                    <p>सभी प्रोजेक्ट्स एक ही स्थान पर | Live Launchers, Admin Portals & Workspaces</p>
                 </div>
             </div>
             <div class="header-actions">
@@ -410,8 +416,8 @@
         <!-- Unified Workspace Banner -->
         <div class="all-in-one-banner">
             <div class="banner-info">
-                <h2><span>⚡</span> One-Click Multi-Project Explorer</h2>
-                <p>आपके सभी 8 प्रोजेक्ट्स सुरक्षित, क्लीनअप और प्राइवेसी वेरिफाइड हैं। आप किसी भी प्रोजेक्ट को सीधे यहीं से ब्राउज़र में खोल सकते हैं या VS Code में लोड कर सकते हैं।</p>
+                <h2><span>🛡️</span> 100% Private & Protected Architecture</h2>
+                <p>आपके महत्वपूर्ण और सेंसिटिव प्रोजेक्ट्स (College System, 8Clothes, Travele) अब <strong>Private Repository</strong> के रूप में पूरी तरह सुरक्षित हैं। आपका कोड या डेटा कोई भी नहीं देख या चुरा सकता।</p>
             </div>
             <div>
                 <a href="vscode://file/D:/Harshit_Projects.code-workspace" class="btn btn-primary">
@@ -427,58 +433,121 @@
                 <input type="text" id="projectSearch" placeholder="Search project by name or tech stack...">
             </div>
             <div class="filter-tags">
-                <button class="filter-chip active" data-filter="all">All Projects (8)</button>
+                <button class="filter-chip active" data-filter="all">All Projects (9)</button>
+                <button class="filter-chip" data-filter="private">Private (Protected)</button>
                 <button class="filter-chip" data-filter="python">Python / Flask</button>
+                <button class="filter-chip" data-filter="react">React / Laravel</button>
                 <button class="filter-chip" data-filter="web">Web & Multimedia</button>
-                <button class="filter-chip" data-filter="react">React & Full-Stack</button>
-                <button class="filter-chip" data-filter="java">Java & Study</button>
+                <button class="filter-chip" data-filter="java">Java Lab</button>
             </div>
         </div>
 
         <!-- Projects Grid -->
         <div class="projects-grid" id="projectsContainer">
 
-            <!-- 1. Travele -->
-            <div class="project-card" data-tags="python flask web weather travel">
+            <!-- 1. College Portal System -->
+            <div class="project-card" data-tags="private react laravel fullstack college academic admin">
                 <div>
                     <div class="card-header">
-                        <div class="card-icon" style="background: rgba(14, 165, 233, 0.15); color: #0284c7;">🌍</div>
-                        <span class="badge-status badge-live">Verified on GitHub</span>
+                        <div class="card-icon" style="background: rgba(239, 68, 68, 0.15); color: #f87171;">🎓</div>
+                        <span class="badge-status badge-private"><i class="fa-solid fa-lock"></i> 100% PRIVATE</span>
                     </div>
-                    <h3 class="card-title">Travele — Smart Travel Companion</h3>
+                    <h3 class="card-title">College Management & Academic Portal</h3>
                     <p class="card-desc">
-                        ट्रेवल गाइड और वेदर ऐप: दुनिया के किसी भी शहर की लाइव वेदर, मौसम आधारित घूमने की जगहें (Summer, Winter, Monsoon) और विकिपीडिया टूरिस्ट आकर्षण।
+                        फुल-स्टैक कॉलेज एडमिनिस्ट्रेशन सिस्टम: स्टूडेंट्स, फैकल्टी, अटेंडेंस, परीक्षा परिणाम, डायनामिक नोटिसेज और कम्पलीट एडमिन कंट्रोल पैनल।
                     </p>
                     <div class="tech-tags">
-                        <span class="tech-pill">Python</span>
-                        <span class="tech-pill">Flask</span>
-                        <span class="tech-pill">Open-Meteo API</span>
-                        <span class="tech-pill">Wikipedia API</span>
+                        <span class="tech-pill">Laravel 11</span>
+                        <span class="tech-pill">React 19</span>
+                        <span class="tech-pill">Tailwind CSS</span>
+                        <span class="tech-pill">Admin RBAC</span>
                     </div>
                 </div>
                 <div class="card-actions">
-                    <a href="https://github.com/harshitmeena200515-cyber/travel-companion-guide" target="_blank" class="btn btn-outline card-btn">
-                        <i class="fa-brands fa-github"></i> GitHub Repo
+                    <a href="https://github.com/harshitmeena200515-cyber/college-portal-management-system" target="_blank" class="btn btn-private card-btn">
+                        <i class="fa-solid fa-shield-halved"></i> Private Repo
+                    </a>
+                    <a href="vscode://file/D:/my_collage_project" class="btn btn-primary card-btn">
+                        <i class="fa-solid fa-laptop-code"></i> VS Code
+                    </a>
+                    <button class="btn btn-outline card-btn" onclick="copyCommand('admin@college.com | pass: password')">
+                        <i class="fa-solid fa-key"></i> Copy Admin Creds
+                    </button>
+                </div>
+            </div>
+
+            <!-- 2. Travele -->
+            <div class="project-card" data-tags="private python flask web weather travel admin">
+                <div>
+                    <div class="card-header">
+                        <div class="card-icon" style="background: rgba(14, 165, 233, 0.15); color: #0284c7;">🌍</div>
+                        <span class="badge-status badge-private"><i class="fa-solid fa-lock"></i> 100% PRIVATE</span>
+                    </div>
+                    <h3 class="card-title">Travele — Smart Travel Companion</h3>
+                    <p class="card-desc">
+                        ट्रेवल गाइड, वेदर ऐप व एडमिन कंट्रोल: दुनिया के शहरों की लाइव वेदर, सीज़नल आकर्षण (Summer, Monsoon, Winter) और एडमिन एनालिटिक्स डैशबोर्ड।
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-pill">Python Flask</span>
+                        <span class="tech-pill">Open-Meteo API</span>
+                        <span class="tech-pill">Wikipedia API</span>
+                        <span class="tech-pill">Admin Dashboard</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://github.com/harshitmeena200515-cyber/travel-companion-guide" target="_blank" class="btn btn-private card-btn">
+                        <i class="fa-solid fa-shield-halved"></i> Private Repo
                     </a>
                     <a href="vscode://file/D:/travele" class="btn btn-primary card-btn">
                         <i class="fa-solid fa-laptop-code"></i> VS Code
                     </a>
                     <button class="btn btn-outline card-btn" onclick="copyCommand('cd D:\\travele && python app.py')">
-                        <i class="fa-solid fa-terminal"></i> Run App
+                        <i class="fa-solid fa-terminal"></i> Run Server
                     </button>
                 </div>
             </div>
 
-            <!-- 2. ProStudio Video Editor -->
+            <!-- 3. 8clothes Fashion E-Commerce -->
+            <div class="project-card" data-tags="private react python fastapi fullstack ecommerce admin">
+                <div>
+                    <div class="card-header">
+                        <div class="card-icon" style="background: rgba(236, 72, 153, 0.15); color: #f472b6;">👗</div>
+                        <span class="badge-status badge-private"><i class="fa-solid fa-lock"></i> 100% PRIVATE</span>
+                    </div>
+                    <h3 class="card-title">8Clothes — Fashion E-Commerce</h3>
+                    <p class="card-desc">
+                        फुल-स्टैक फैशन डिस्कवरी व एफिलिएट प्लेटफॉर्म: स्मार्ट स्टाइल फिल्टरिंग, डील्स, गैलरी, सोशल रील स्टूडियो और एडमिन प्रोडक्ट मैनेजर।
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-pill">React + Vite</span>
+                        <span class="tech-pill">FastAPI</span>
+                        <span class="tech-pill">Tailwind CSS</span>
+                        <span class="tech-pill">Admin Portal</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://github.com/harshitmeena200515-cyber/8clothes-fashion-ecommerce" target="_blank" class="btn btn-private card-btn">
+                        <i class="fa-solid fa-shield-halved"></i> Private Repo
+                    </a>
+                    <a href="vscode://file/D:/8clothes" class="btn btn-primary card-btn">
+                        <i class="fa-solid fa-laptop-code"></i> VS Code
+                    </a>
+                    <button class="btn btn-outline card-btn" onclick="copyCommand('cd D:\\8clothes\\frontend && npm run dev')">
+                        <i class="fa-solid fa-terminal"></i> Run Frontend
+                    </button>
+                </div>
+            </div>
+
+            <!-- 4. ProStudio Video Editor -->
             <div class="project-card" data-tags="web multimedia javascript editor video">
                 <div>
                     <div class="card-header">
                         <div class="card-icon" style="background: rgba(244, 63, 94, 0.15); color: #f43f5e;">🎬</div>
-                        <span class="badge-status badge-live">Verified on GitHub</span>
+                        <span class="badge-status badge-live">Live Web App</span>
                     </div>
                     <h3 class="card-title">ProStudio — Video & Audio Editor</h3>
                     <p class="card-desc">
-                        CapCut/Premiere जैसा आधुनिक इन-ब्राउज़र नॉन-लीनियर मल्टीमीडिया एडिटर। मल्टी-ट्रैक टाइमलाइन, वेब ऑडियो इंजन, कलर ग्रेडिंग और विजुअल फिल्टर्स।
+                        CapCut/Premiere जैसा आधुनिक इन-ब्राउज़र मल्टीमीडिया एडिटर। मल्टी-ट्रैक टाइमलाइन, वेब ऑडियो इंजन, कलर ग्रेडिंग और विजुअल फिल्टर्स।
                     </p>
                     <div class="tech-tags">
                         <span class="tech-pill">JavaScript ES6+</span>
@@ -488,11 +557,11 @@
                     </div>
                 </div>
                 <div class="card-actions">
+                    <a href="https://harshitmeena200515-cyber.github.io/prostudio-video-editor/" target="_blank" class="btn btn-primary card-btn">
+                        <i class="fa-solid fa-play"></i> Open Live App
+                    </a>
                     <a href="https://github.com/harshitmeena200515-cyber/prostudio-video-editor" target="_blank" class="btn btn-outline card-btn">
                         <i class="fa-brands fa-github"></i> GitHub Repo
-                    </a>
-                    <a href="file:///D:/editing%20app/index.html" target="_blank" class="btn btn-primary card-btn">
-                        <i class="fa-solid fa-play"></i> Open in Browser
                     </a>
                     <a href="vscode://file/D:/editing%20app" class="btn btn-outline card-btn">
                         <i class="fa-solid fa-code"></i> VS Code
@@ -500,12 +569,12 @@
                 </div>
             </div>
 
-            <!-- 3. Voice Studio -->
+            <!-- 5. Voice Studio -->
             <div class="project-card" data-tags="web multimedia javascript speech voice audio">
                 <div>
                     <div class="card-header">
                         <div class="card-icon" style="background: rgba(168, 85, 247, 0.15); color: #c084fc;">🎙️</div>
-                        <span class="badge-status badge-live">Verified on GitHub</span>
+                        <span class="badge-status badge-live">Live Web App</span>
                     </div>
                     <h3 class="card-title">Voice Studio — Audio & Speech Lab</h3>
                     <p class="card-desc">
@@ -519,11 +588,11 @@
                     </div>
                 </div>
                 <div class="card-actions">
+                    <a href="https://harshitmeena200515-cyber.github.io/voice-transformation-studio/" target="_blank" class="btn btn-primary card-btn">
+                        <i class="fa-solid fa-play"></i> Open Live App
+                    </a>
                     <a href="https://github.com/harshitmeena200515-cyber/voice-transformation-studio" target="_blank" class="btn btn-outline card-btn">
                         <i class="fa-brands fa-github"></i> GitHub Repo
-                    </a>
-                    <a href="file:///D:/voice/index.html" target="_blank" class="btn btn-primary card-btn">
-                        <i class="fa-solid fa-play"></i> Open in Browser
                     </a>
                     <a href="vscode://file/D:/voice" class="btn btn-outline card-btn">
                         <i class="fa-solid fa-code"></i> VS Code
@@ -531,43 +600,12 @@
                 </div>
             </div>
 
-            <!-- 4. 8clothes Fashion E-Commerce -->
-            <div class="project-card" data-tags="react python fastapi fullstack ecommerce">
-                <div>
-                    <div class="card-header">
-                        <div class="card-icon" style="background: rgba(236, 72, 153, 0.15); color: #f472b6;">👗</div>
-                        <span class="badge-status badge-live">Verified on GitHub</span>
-                    </div>
-                    <h3 class="card-title">8Clothes — Fashion E-Commerce</h3>
-                    <p class="card-desc">
-                        फुल-स्टैक फैशन डिस्कवरी और एफिलिएट ई-कॉमर्स प्लेटफॉर्म। स्मार्ट स्टाइल फिल्टरिंग, डील्स, गैलरी, एडमिन पोर्टल और सोशल रील स्टूडियो।
-                    </p>
-                    <div class="tech-tags">
-                        <span class="tech-pill">React + Vite</span>
-                        <span class="tech-pill">FastAPI</span>
-                        <span class="tech-pill">Tailwind CSS</span>
-                        <span class="tech-pill">Affiliate Engine</span>
-                    </div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://github.com/harshitmeena200515-cyber/8clothes-fashion-ecommerce" target="_blank" class="btn btn-outline card-btn">
-                        <i class="fa-brands fa-github"></i> GitHub Repo
-                    </a>
-                    <a href="vscode://file/D:/8clothes" class="btn btn-primary card-btn">
-                        <i class="fa-solid fa-laptop-code"></i> VS Code
-                    </a>
-                    <button class="btn btn-outline card-btn" onclick="copyCommand('cd D:\\8clothes\\frontend && npm run dev')">
-                        <i class="fa-solid fa-terminal"></i> Run Frontend
-                    </button>
-                </div>
-            </div>
-
-            <!-- 5. India State & District Explorer -->
+            <!-- 6. India State & District Explorer -->
             <div class="project-card" data-tags="web python geography explorer">
                 <div>
                     <div class="card-header">
                         <div class="card-icon" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">🇮🇳</div>
-                        <span class="badge-status badge-live">Verified on GitHub</span>
+                        <span class="badge-status badge-live">Live Web App</span>
                     </div>
                     <h3 class="card-title">India State & District Explorer</h3>
                     <p class="card-desc">
@@ -581,11 +619,11 @@
                     </div>
                 </div>
                 <div class="card-actions">
+                    <a href="https://harshitmeena200515-cyber.github.io/india-state-district-explorer/" target="_blank" class="btn btn-primary card-btn">
+                        <i class="fa-solid fa-play"></i> Open Live App
+                    </a>
                     <a href="https://github.com/harshitmeena200515-cyber/india-state-district-explorer" target="_blank" class="btn btn-outline card-btn">
                         <i class="fa-brands fa-github"></i> GitHub Repo
-                    </a>
-                    <a href="file:///D:/project/index.html" target="_blank" class="btn btn-primary card-btn">
-                        <i class="fa-solid fa-play"></i> Open in Browser
                     </a>
                     <a href="vscode://file/D:/project" class="btn btn-outline card-btn">
                         <i class="fa-solid fa-code"></i> VS Code
@@ -593,7 +631,7 @@
                 </div>
             </div>
 
-            <!-- 6. Core Java Lab Suite -->
+            <!-- 7. Core Java Lab Suite -->
             <div class="project-card" data-tags="java oop academic study">
                 <div>
                     <div class="card-header">
@@ -621,7 +659,7 @@
                 </div>
             </div>
 
-            <!-- 7. Rose in Every Language -->
+            <!-- 8. Rose in Every Language -->
             <div class="project-card" data-tags="web creative animated">
                 <div>
                     <div class="card-header">
@@ -630,7 +668,7 @@
                     </div>
                     <h3 class="card-title">Rose in Every Language</h3>
                     <p class="card-desc">
-                        इंटरएक्टिव एनिमेटेड लाइव ब्लूमिंग रोज़ जो दुनिया की विभिन्न भाषाओं में प्यार और सौंदर्य को खूबसूरती से प्रदर्शित करता है।
+                        इंटरएक्टिव एनिमेटेड लाइव ब्लूमिंग रोज़ जो विभिन्न भाषाओं में प्यार और सौंदर्य को प्रदर्शित करता है।
                     </p>
                     <div class="tech-tags">
                         <span class="tech-pill">HTML5 Canvas</span>
@@ -645,7 +683,7 @@
                 </div>
             </div>
 
-            <!-- 8. Smart Restaurant Menu -->
+            <!-- 9. Smart Restaurant Menu -->
             <div class="project-card" data-tags="web restaurant menu">
                 <div>
                     <div class="card-header">
@@ -654,7 +692,7 @@
                     </div>
                     <h3 class="card-title">Smart Restaurant Menu</h3>
                     <p class="card-desc">
-                        रेस्टोरेंट और कैफे के लिए डिजिटल स्मार्ट मेनू एप्लिकेशन, जिससे ग्राहक आसान नेविगेशन के साथ व्यंजन और कीमतें देख सकते हैं।
+                        रेस्टोरेंट और कैफे के लिए डिजिटल स्मार्ट मेनू एप्लिकेशन, जिससे व्यंजन और कीमतें आसानी से नेविगेट की जा सकती हैं।
                     </p>
                     <div class="tech-tags">
                         <span class="tech-pill">JavaScript</span>
@@ -675,16 +713,15 @@
     <!-- Toast Notification -->
     <div id="toast" class="toast">
         <i class="fa-solid fa-circle-check" style="color: var(--accent-green);"></i>
-        <span id="toastMsg">Command copied to clipboard!</span>
+        <span id="toastMsg">Copied!</span>
     </div>
 
     <script>
-        // Copy Terminal Command
         function copyCommand(cmd) {
             navigator.clipboard.writeText(cmd).then(() => {
                 const toast = document.getElementById('toast');
                 const msg = document.getElementById('toastMsg');
-                msg.textContent = 'Command copied: ' + cmd;
+                msg.textContent = 'Copied: ' + cmd;
                 toast.style.display = 'flex';
                 setTimeout(() => {
                     toast.style.display = 'none';
@@ -692,7 +729,6 @@
             });
         }
 
-        // Search Filter
         const searchInput = document.getElementById('projectSearch');
         const cards = document.querySelectorAll('.project-card');
 
@@ -708,7 +744,6 @@
             });
         });
 
-        // Chip Filter
         const chips = document.querySelectorAll('.filter-chip');
         chips.forEach(chip => {
             chip.addEventListener('click', () => {
